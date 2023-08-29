@@ -1,0 +1,16 @@
+package javatest;
+
+// class 안에 class
+/*
+ 응용문제
+ 중첩 클래스를 이용하여 자식 클래스에 결과값을 출력하는 프로세서를 제작하시오.
+ 부모 클래스명은 : mother
+ 자식 클래스명은 : child
+ 메인 클래스에서 mother 클래스로 값을 전달
+ */
+public class java15 {
+
+	public static void main(String[] args) {
+		
+	}
+}

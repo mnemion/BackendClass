@@ -1,0 +1,18 @@
+package javatest;
+//즉시 실행 메소드 부분
+
+public class java10 {
+	
+	public static void main(String[] args) {
+		box1 b = new box1();
+	}
+}
+
+class box1{
+	public box1() {
+		System.out.println("즉시 실행 메소드1");
+	}
+	public void box1() {
+		System.out.println("즉시 실행 메소드2");
+	}
+}

@@ -1,0 +1,11 @@
+package javatest;
+/*
+ Java 
+*/
+public class db_test2 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 - 버블링 + 캡쳐링 함수 기초 응용편(장바구니)</title>
+</head>
+<body>
+	<input type="checkbox" id="all" onclick="abc(this.checked)"> 상품 전체 선택<br>
+	<input type="checkbox" id="c1" onclick="bbb()" value="5000"> 포도 : 5000원<br>
+	<input type="checkbox" id="c2" onclick="bbb()" value="1000"> 사과 : 1000원<br>
+	<input type="checkbox" id="c3" onclick="bbb()" value="8000"> 멜론 : 8000원<br>
+	<input type="checkbox" id="c4" onclick="bbb()" value="1200"> 체리 : 1200원<br>
+</body>
+<br>
+결제하실 금액 : <div id="total">0</div>
+<script>
+	window.onload = function() {
+	    document.querySelectorAll('input[type="checkbox"]').forEach(function(el) {
+	        el.checked = false;
+	    });
+	    document.getElementById("total").innerText = 0;
+	}
+
+	
+	function bbb(){
+		var allCheckbox = document.getElementById("all");
+		var allSelected = true;
+		for (var i = 1; i <= 4; i++) {
+			if(document.getElementById("c" + i).checked == false){
+				allSelected = false;
+				break;
+			}
+		}
+		allCheckbox.checked = allSelected;
+		
+		//가격 계산 코드
+		var total = 0;
+		for (var i = 1; i <= 4; i++) {
+			if (document.getElementById("c" + i).checked) {
+				total += parseInt(document.getElementById("c" + i).value);
+			}
+		}
+		document.getElementById("total").innerText = total;
+	}
+	
+	function abc(checked){
+		//전체 선택
+		for(var i = 1; i <= 4; i++){
+			document.getElementById("c" + i).checked = checked;
+		}
+		bbb();
+	}
+</script>
+</html>

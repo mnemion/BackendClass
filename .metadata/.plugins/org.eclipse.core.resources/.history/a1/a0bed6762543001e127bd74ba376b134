@@ -1,0 +1,13 @@
+package javatest;
+//외부 db 정보 클래스를 로드하여 연결하기
+public class db_test3 {
+
+	public static void main(String[] args) {
+		try {
+			
+		}
+		catch(Exception e) {
+			System.out.println();
+		}
+	}
+}

@@ -1,0 +1,8 @@
+package javatest;
+//static, if문 + Scanner
+public class java3 {
+
+	public static void main(String[] args) {	//실행 메소드
+		
+	}
+}

@@ -1,0 +1,21 @@
+package javatest;
+
+
+/*
+ [숙제]
+ 추상 클래스 + 중첩 클래스를 이용하여 프로세서를 제작합니다.
+ 추상 클래스에서는 father라는 이름을 가지고 있으며,
+ 메소드는 f_method라는 이름을 가집니다.
+ 또한 변수도 u_name이라는 문자형 변수를 생성합니다.
+ 
+ 위까지가 추상 클래스를 만들라는 것
+ 
+ f_method에 문자형으로 인자값을 하나 받는 형태로 제작합니다.
+ 메인에서 Scanner를 이용하여
+ */
+
+public class work4 {
+    public static void main(String[] args) {
+    	
+    }
+}

@@ -1,0 +1,8 @@
+package javatest;
+
+public class db_test3 {
+
+	public static void main(String[] args) {
+		
+	}
+}

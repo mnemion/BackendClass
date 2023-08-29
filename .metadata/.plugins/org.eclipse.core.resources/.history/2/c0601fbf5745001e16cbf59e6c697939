@@ -1,0 +1,10 @@
+package javatest;
+
+//random 함수 사용법
+
+public class java14 {
+
+	public static void main(String[] args) {
+		
+	}
+}

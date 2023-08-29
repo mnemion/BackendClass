@@ -1,0 +1,16 @@
+package javatest;
+
+public class java11 {
+
+	public static void main(String[] args) {
+		
+	}
+}
+
+class box2{
+	
+}
+
+class box3{
+	
+}

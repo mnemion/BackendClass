@@ -1,0 +1,74 @@
+package javatest;
+import java.util.Arrays;
+
+import app.app1;	//패키지명.public class명
+//import : 가져오는 기능, export : 내보내는 기능
+
+/*
+ 1. 패키지가 다를 경우 public class 핸들링
+ */
+public class java9 {
+	//packge app(app1.java) 연계 프로세서
+	public static void main(String[] args) {
+		//다른 패키지에 있는 public Class만 호출하여 가져올 수 있음
+		app1 ap = new app1();
+		ap.main(args);
+		
+		/*
+		new abox().dataload();
+		new bbox().dataload();;
+		new cbox().dataload();;
+		*/
+		
+		//배열로 클래스 로드
+		ddd[] d = {new abox(), new bbox(), new cbox()};
+		//d[0].dataload();
+		
+		/*
+		for(ddd z : d) {
+			z.dataload();
+		}
+		*/
+		
+		
+		int w = 0;
+		while(w < d.length) {
+			if() {
+				
+				d[w].dataload();
+				w++;
+			}
+		}
+		
+	}
+}
+
+//abstract : 추상 클래스 + 추상 메소드 (프레임워크에 활용)
+/*
+ public class가 없을 경우 abstract에서도 public로 핸들링할 수 있으며,
+ 단, public class가 있을 경우 default로 abstract를 이용합니다.
+ */
+abstract class ddd{
+	public abstract void dataload();
+}
+
+class abox extends ddd{
+	@Override
+	public void dataload() {
+		System.out.println("abox 클래스");		
+	}
+}
+
+class bbox extends ddd{
+	@Override
+	public void dataload() {
+		System.out.println("bbox 클래스");
+	}
+}
+
+class cbox extends ddd{
+	@Override
+	public void dataload() {
+		System.out.println("cbox 클래스");
+	}
+}

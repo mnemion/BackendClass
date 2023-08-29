@@ -1,0 +1,26 @@
+package javatest;
+/*
+ double loop 응용편 (do~while + for)
+ 다음 결과값처럼 출력되도록 하시오.
+ 9*1 = 9
+ 9*2 = 18
+ 9*3 = 27
+ 8*1 = 8
+ 8*2 = 16
+ 8*3 = 24
+ 7*1 = 7
+ 7*2 = 14
+ 7*3 = 21
+ */
+public class java8 {
+
+	public static void main(String[] args) {
+		for (int i = 1; i < 4; i++) {
+		    int j = 1;
+		    while (j < 4) {
+		        System.out.println(i + " + " + j + " = " + (i+j));
+		        j++;
+		    }
+		}
+	}
+}

@@ -1,0 +1,18 @@
+function join(){
+	if(document.getElementById("mid").value){
+		alert("아이디를 입력해주세요.")
+	}
+	else if(document.getElementById("mname").value){
+		alert("이름을 입력해주세요.")
+	}
+	else if(document.getElementById("mpassword").value){
+		alert("패스워드를 입력해주세요.")
+	}
+	else if(document.getElementById("mtel").value){
+		alert("전화번호를 입력해주세요.")
+	}
+	else if(document.getElementById("memail").value){
+		alert("전화번호를 입력해주세요.")
+	}
+	
+}

@@ -1,0 +1,41 @@
+package javatest;
+//오버로딩, 오버라이드 (추상 클래스, Thread, interface, Network, I/O)
+
+public class java11 {
+
+	public static void main(String[] args) {
+		box3 b = new box3();
+		b.abc();
+		b.ccc("홍길동");
+		b.abc("아이디", "이메일");
+	}
+}
+
+class box2{
+	public void abc() {
+		System.out.println("부모 외부 내용 값");
+	}
+	public void abc(String a, String b) {
+		System.out.println("추가 오버라이드 메소드 값");
+	}
+	
+}
+
+class box3 extends box2 {
+	@Override
+	public void abc() {
+		//super.abc();
+		System.out.println("자식 내용 값");
+	}
+	
+	@Override
+	public void abc(String a, String b) {
+		super.abc(a, b);
+	}
+	
+	
+	
+	public void ccc(String name) {	//오버로딩
+		System.out.println("오버로딩에 사용되는 값");
+	}
+}

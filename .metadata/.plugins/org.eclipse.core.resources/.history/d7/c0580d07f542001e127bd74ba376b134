@@ -1,0 +1,15 @@
+package javatest;
+// double loop
+public class java7 {
+
+	public static void main(String[] args) {
+		new data4().abc();
+	}
+
+}
+
+class data4{
+	public void abc() {
+		
+	}
+}

@@ -1,0 +1,9 @@
+package javatest;
+//static, if문 + Scaaner
+public class java3 {
+
+	public static void main(String[] args) {
+		new java4().java1();
+	}
+
+}

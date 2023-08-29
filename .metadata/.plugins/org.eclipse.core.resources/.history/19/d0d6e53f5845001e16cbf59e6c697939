@@ -1,0 +1,13 @@
+package javatest;
+
+//random 함수 사용법
+
+public class java14 {
+
+	public static void main(String[] args) {
+		//Math.random() : 랜덤함수 (기본 자료형 double)
+		double no = Math.random() * 10;
+		int no1 = Math.ceil(no);
+		System.out.println(no);
+	}
+}

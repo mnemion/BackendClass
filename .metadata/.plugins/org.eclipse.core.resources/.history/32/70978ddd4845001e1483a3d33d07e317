@@ -1,0 +1,12 @@
+package javatest;
+//상속에 관련된 문제사항 (extends)
+public class java12 {
+
+	public static void main(String[] args) {
+		
+	}
+}
+
+class login_ex{
+	
+}

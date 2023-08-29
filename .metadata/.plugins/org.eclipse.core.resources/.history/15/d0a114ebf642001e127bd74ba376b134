@@ -1,0 +1,36 @@
+package javatest;
+// double loop
+public class java7 {
+
+	public static void main(String[] args) {
+		new data4().abc();
+	}
+}
+
+class data4{
+	public void abc() {
+		//for + for
+		/*
+		int f, ff;
+		int total;
+		for(f = 1; f <= 5; f++) {
+			for(ff = 1; ff <= 5; ff++) {
+				total = f + ff;
+				System.out.println(total);
+			}
+		}
+		*/
+		
+		int w = 1;
+		int total = 0;
+		while(w <= 5) {
+			int ww= 1;
+			while(ww <= 5) {
+				total = w + ww;
+				System.out.println(total);
+				ww++;
+			}
+			w++;
+		}
+	}
+}

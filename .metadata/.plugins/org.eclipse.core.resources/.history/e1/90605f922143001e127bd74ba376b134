@@ -1,0 +1,11 @@
+package javatest;
+/*
+ 숙제 구구단 7~9단까지
+ 단, 각
+ */
+public class work2 {
+
+	public static void main(String[] args) {
+		
+	}
+}

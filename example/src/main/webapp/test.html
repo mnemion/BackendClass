@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+고객명 : <div id="user"></div><br>
+아이디 : <div id="idok"></div><br>
+<input type="checkbox" id="personalInfo" disabled>개인정보 3자에 제공 (선택)
+</body>
+<script>
+	var uri = decodeURI(window.location.search);
+	var data = uri.split("&idok=");
+	var data2 = data[0].split("?user=");
+	document.getElementById("user").innerText = data2[1];
+	var idokData = data[1].split("&personalInfo=");
+	document.getElementById("idok").innerText = idokData[0];
+	if (uri.includes('personalInfo=on')) {
+	    document.getElementById('personalInfo').checked = true;
+	}
+	
+</script>
+</html>

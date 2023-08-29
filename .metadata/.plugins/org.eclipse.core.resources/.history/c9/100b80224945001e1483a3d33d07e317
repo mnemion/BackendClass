@@ -1,0 +1,22 @@
+package javatest;
+//상속에 관련된 문제사항 (extends = 1개의 클래스에서 사용), 
+public class java12 {
+
+	public static void main(String[] args) {
+		
+	}
+}
+
+class login_ex{
+	public void aa() {
+		System.out.println("로그인 메소드");
+	}
+}
+
+class logout_ex extends login_ex {
+	
+}
+
+class box5{
+	
+}

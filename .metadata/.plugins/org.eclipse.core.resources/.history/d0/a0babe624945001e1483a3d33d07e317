@@ -1,0 +1,40 @@
+package javatest;
+//상속에 관련된 문제사항 (extends = 1개의 클래스에서 사용), 
+public class java12 {
+
+	public static void main(String[] args) {
+		box5 b = new box5();
+		b.aa();
+		b.bb();
+	}
+}
+
+class login_ex{
+	public void aa() {
+		System.out.println("로그인 메소드");
+	}
+}
+
+class logout_ex extends login_ex {
+	@Override
+	public void aa() {
+		super.aa();
+	}
+	public void bb() {
+		System.out.println("로그아웃 메소드");
+	}
+}
+
+class box5 extends login_ex {
+	@Override
+	public void aa() {
+		// TODO Auto-generated method stub
+		super.aa();
+	}
+	
+	@Override
+	private void bb() {
+		super.bb();
+
+	}
+}

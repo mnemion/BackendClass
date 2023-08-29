@@ -1,0 +1,57 @@
+package javatest;
+/*
+ [숙제] 상속형태의 클래스를 이용하여 다음 문제에 맞는 결과값을 돌출하는 코드를 작성하시오.
+ [DB] = {55, 1, 6, 8, 10, 22, 96, 33, 31, 45, 48, 60}
+ 
+ "해당 데이터를 1.짝수, 2.홀수를 선택하세요?"
+ 
+ [결과]
+ 짝수값 : 6, 8, 10, 22, 96, 48, 60
+ 홀수값 : 55, 1, 33, 31, 45
+ 
+ 단, sort(정렬)하십시오.
+ 
+ 최종값에 대한 오름차순으로 정렬하여 최종출력합니다. (sort)
+ 최종값(짝수) : 6, 8, 10, 22, 48, 60, 96 (오름차순으로 정렬)
+ 
+ */
+import java.util.*;
+
+class Data {
+    int[] db = {55, 1, 6, 8, 10, 22, 96, 33, 31, 45, 48, 60};
+}
+
+class ProcessData extends Data {
+    ArrayList<Integer> evenNumbers = new ArrayList<Integer>();
+    ArrayList<Integer> oddNumbers = new ArrayList<Integer>();
+
+    public void process() {
+        for (int i = 0; i < db.length; i++) {
+            if (db[i] % 2 == 0) {
+                evenNumbers.add(db[i]);
+            } else {
+                oddNumbers.add(db[i]);
+            }
+        }
+        Collections.sort(evenNumbers);
+        Collections.sort(oddNumbers);
+    }
+}
+
+public class work3 {
+    public static void main(String[] args) {
+        Scanner sc = null;
+        ProcessData pd = new ProcessData();
+        pd.process();
+        System.out.print("해당 데이터를 1.짝수, 2.홀수를 선택하세요?: ");
+        int choice = sc.nextInt();
+        if (choice == 1) {
+            System.out.println("짝수값: " + pd.evenNumbers);
+        } else if (choice == 2) {
+            System.out.println("홀수값: " + pd.oddNumbers);
+        } else {
+            System.out.println("잘못된 입력입니다.");
+        }
+    }
+}
+

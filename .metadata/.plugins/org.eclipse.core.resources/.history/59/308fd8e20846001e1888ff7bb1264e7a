@@ -1,0 +1,24 @@
+package app;
+
+//javatest package 중에서 java9와 연계
+
+public class app1 extends app1_box {
+
+	
+	public static void main(String[] args) {
+		app1 ap = new app1();
+		ap.abc();
+		System.out.println("외부 패키지 class입니다.");
+		
+	}
+	@Override
+	public void abc() {
+		super.abc();
+	}
+}
+
+class app1_box{
+	public void abc() {
+		System.out.println("외부 class 중 abc 메소드");
+	}
+}

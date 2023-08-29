@@ -1,0 +1,20 @@
+package javatest;
+
+import java.util.Scanner;
+
+public class java10 {
+	
+	public static void main(String[] args) {
+		String q[] = {"고객명을 입력하세요?", "아이디를 입력하세요?", "패스워드를 입력하세요?"};
+		Scanner sc = new Scanner(System.in);
+		String a[] = new String[q.length];
+		int w = 0;
+		while(w < q.length) {
+			System.out.println(q[w]);
+			String a[w] = sc.nextLine();
+			w++;
+		}
+
+	}
+
+}

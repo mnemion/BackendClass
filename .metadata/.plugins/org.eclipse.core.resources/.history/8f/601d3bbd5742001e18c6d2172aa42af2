@@ -1,0 +1,11 @@
+package javatest;
+
+public class java1 {
+
+	public static void main(String[] args) {
+		//java2 j2 = new java2();
+		//j2.main(args);
+		abc a = new abc();
+		a.data();
+	}
+}

@@ -1,0 +1,8 @@
+package javatest;
+
+public class java9 {
+	//packge app(app1.java) 연계 프로세서
+	public static void main(String[] args) {
+		
+	}
+}

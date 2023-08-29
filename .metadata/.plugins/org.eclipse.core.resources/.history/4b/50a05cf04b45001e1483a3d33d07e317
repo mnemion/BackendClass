@@ -1,0 +1,21 @@
+package javatest;
+/*
+ overide를 활용함
+ 응용문제1
+ "학생명을 입력해주세요?"
+ "검색할 과목명을 입력하세요 (국어, 수학, 과학, 역사)?:"
+ 
+ [데이터]
+ {"홍길동", "이순신", "유관순"}
+ 
+ 결과 :
+ 홍길동
+ 과학 88점
+ */
+public class java13 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

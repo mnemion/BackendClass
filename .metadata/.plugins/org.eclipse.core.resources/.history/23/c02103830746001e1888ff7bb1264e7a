@@ -1,0 +1,14 @@
+package app;
+//javatest package 중에서 java9와 연계
+public class app1 {
+
+	public static void main(String[] args) {
+		System.out.println("외부 패키지 class입니다.");
+	}
+}
+
+class app1_box{
+	public void abc() {
+		System.out.println("외부 class 중 abc 메소드");
+	}
+}

@@ -1,0 +1,16 @@
+package javatest;
+
+public class java2 {
+
+	public static void main(String[] args) {
+		String user = "홍길동";
+		System.out.println(user);
+	}
+}
+
+class abc{
+	public void data() {
+		String user = "홍길동";
+		System.out.println(user);
+	}
+}

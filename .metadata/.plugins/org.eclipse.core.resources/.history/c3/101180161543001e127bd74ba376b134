@@ -1,0 +1,61 @@
+package javatest;
+
+import java.sql.*;
+
+/*
+ 응용편 Java + Database
+*/
+public class db_test1 {
+
+	public static void main(String[] args) {
+		Connection ct = null;
+		try {
+			dbconfig db = new dbconfig();
+			ct = db.info();
+			//System.out.println(ct.toString());// DB 접속 확인
+			
+			//DB문법
+			String insert = "insert into mail values ('0', '이종혁', 'jh@nate.com', '서울이 넘 멀어', '정말 그렇게 생각해?', now())";
+			PreparedStatement ps = ct.prepareStatement(insert);	//SQL문법을 작업 준비과정
+			// execute() : select 문법에만 사용
+			// executeUpdate() : insert, date, delete, alter, create
+			int oksign = ps.executeUpdate();	//SQL에 Query에 대한 값은 숫자로 처리
+			
+			if(oksign == 1) {	// 정상적으로 저장
+				System.out.println("저장이 잘 되었습니다.");
+			}
+			else {	// 저장오류, SQL문법 오류, DB접속 오류, 컬럼에 대한 범위오류
+				System.out.println("SQL 문법 오류로 인하여 저장되지 않았습니다.");
+			}
+		} catch(Exception e) {
+			System.out.println("DB 정보가 올바르지 않습니다.");
+		}
+		/*
+		String times = new timezone().new_time(3);
+		System.out.println(times);
+		*/
+		
+		/*
+		Date today = new Date();	
+		SimpleDateFormat data = new SimpleDateFormat("YYYY-MM-dd");
+		SimpleDateFormat time = new SimpleDateFormat("HH:mm:ss");
+		SimpleDateFormat datatime = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+		System.out.println(datatime.format(today));
+		*/
+	}
+}
+
+class dbconfig{	//Database 접속 환경 설정 class
+	//Connection : Interface 사용
+	public static Connection info() throws Exception {
+		String db_drive = "com.mysql.jdbc.Driver";
+		String db_url = "jdbc:mysql://localhost:3306/web";
+		String db_user = "hong";
+		String db_pass = "a123456";
+		
+		Class.forName(db_drive);
+		Connection con = DriverManager.getConnection(db_url, db_user, db_pass);
+		
+		return con;
+	}
+}

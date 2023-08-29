@@ -1,0 +1,40 @@
+package javatest;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+/*
+ Java + Database 응용편1
+ 게시판을 작성하는 프로세서를 제작합니다.
+ 문의제목, 고객명, 패스워드는 6자리 이상, 문의내용
+ 단, 패스워드는 암호화하지 않고 제작합니다.
+ 패스워드 6자리 이하 입력 시 DB에 저장 안 됩니다.
+ 
+*/
+public class db_test2 {
+	public static void main(String[] args) {
+		Connection ct = null;
+		try {
+			formconfig db = new formconfig();
+			db.info();
+		}
+		catch(Exception e) {
+			System.out.println("DB 정보가 올바르지 않습니다.");
+		}
+	}
+}
+
+class formconfig{	//Database 접속 환경 설정 class
+	//Connection : Interface 사용
+	public static Connection info() throws Exception {
+		String db_drive = "com.mysql.jdbc.Driver";
+		String db_url = "jdbc:mysql://localhost:3306/web";
+		String db_user = "hong";
+		String db_pass = "a123456";
+		
+		Class.forName(db_drive);
+		Connection con = DriverManager.getConnection(db_url, db_user, db_pass);
+		
+		return con;
+	}
+}

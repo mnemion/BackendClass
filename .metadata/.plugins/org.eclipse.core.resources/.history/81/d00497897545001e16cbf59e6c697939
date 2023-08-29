@@ -1,0 +1,10 @@
+package web;
+
+import java.sql.*;
+
+public class dbconfig {
+	public static Connection dbinfo() throws Exception {
+		String db_driver = "com.mysql.jdbc.Driver"; // 8점때 버전은 cj로 연결
+		
+	}
+}

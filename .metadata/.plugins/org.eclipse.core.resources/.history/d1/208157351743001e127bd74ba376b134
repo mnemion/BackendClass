@@ -1,0 +1,13 @@
+package javatest;
+/*
+ Java + Database 응용편1
+ 
+ 
+*/
+public class db_test2 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}

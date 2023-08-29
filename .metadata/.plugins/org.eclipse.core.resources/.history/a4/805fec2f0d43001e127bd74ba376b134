@@ -1,0 +1,11 @@
+package javatest;
+
+public class sub_class {
+
+}
+
+class timezone{
+	String new_time() {
+		return null;
+	}
+}

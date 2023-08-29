@@ -1,0 +1,9 @@
+package javatest;
+
+// class 안에 class
+public class java15 {
+
+	public static void main(String[] args) {
+		
+	}
+}

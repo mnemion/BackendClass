@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>URI + splt A파트</title>
+</head>
+<!-- 
+	고객명, 아이디는 모두 필수로 입력되어야 한다.
+	단, 개인정보 3자에 제공은 선택이다.
+	 
+	이벤트 참여 버튼 클릭 시 B파트 사용자에게 URI로 전달한다.
+ -->
+<body>
+	<form id="f" method="get" action="./test.html" onsubmit="return abc()">
+	고객명 <input type="text" name="user"><br>
+	아이디 <input type="text" name="idok"><br>
+	<input type="checkbox" name="personalInfo">개인정보 3자에 제공 (선택)<br>
+	<button>이벤트 참여</button>
+	</form>
+</body>
+<script>
+	function abc(){
+		if(f.user.value == ""){
+			alert("고객명을 입력하세요")
+			return false;
+		}
+		else if(f.idok.value == ""){
+			 alert("아이디를 입력하세요");
+			 return false;
+		}
+		else{
+			return;
+		}
+	}
+</script>
+</html>

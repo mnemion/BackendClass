@@ -1,0 +1,25 @@
+package javatest;
+//static, if문 + Scanner
+public class java3 {	//메인 클래스
+
+	public static void main(String[] args) {	//실행 메소드
+		java3_data jd = new java3_data();
+		jd.abc();
+		java3_data jd2 = new java3_data();
+		jd.abc();
+	}
+}
+// static와 일반 변수 선언에 따른 결과차이
+class java3_data{
+	int a = 10;
+	static int b = 10;
+	
+	public void abc() {
+		System.out.println("a 값 : " + this.a);
+		System.out.println("b 값 : " + this.b);
+		this.a = this.a + this.a;
+		this.b = this.b + this.b;
+		System.out.println("a 값 : " + this.a);
+		System.out.println("b 값 : " + this.b);
+	}
+}
