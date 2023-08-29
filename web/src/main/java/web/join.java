@@ -20,57 +20,56 @@ public class join extends HttpServlet {
         super();
     }
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html; charset=utf-8");
-		String mid = request.getParameter("mid").intern();
-		String mname = request.getParameter("mname").intern();
-		String mpassword = request.getParameter("mpassword").intern();
-		String mmobile = request.getParameter("mmobile").intern();
-		String mtel = request.getParameter("mtel").intern();
-		String memail = request.getParameter("memail").intern();
-		
-		PrintWriter pw = response.getWriter(); //스크립트 출력
-		if(mid == "" || mname == "" || mpassword == "" || mmobile == "") {
-			pw.write("<script>"
-					+ "alert('올바른 정보가 전달되지 않으셨습니다.');"
-					+ "history.go(-1);"
-					+ "</script>");
-		}
-		else {
-			try {
-				this.db = new dbconfig();
-				Connection con = this.db.dbinfo();
-				//람다식 형태의 코드로 작성
-				String sql = "insert into shop values ("
-						+ "'0', ?, ?, password(?), ?, ?, ?, now(), 'Y')";
-				this.ps = con.prepareStatement(sql);
-				this.ps.setString(1, mid);
-				this.ps.setString(2, mname);
-				this.ps.setString(3, mpassword);
-				this.ps.setString(4, mmobile);
-				this.ps.setString(5, mtel);
-				this.ps.setString(6, memail);
-				
-				int call = this.ps.executeUpdate();
-				String msg = "";
-				if(call > 0) {
-					msg = "정상적으로 가입이 완료되었습니다.";
-					this.ps.close();
-					con.close();
-					
-				}
-				else {
-					msg = "가입이 원활하게 진행되지 않았습니다.";
-				}
-				pw.write("<script>"
-					+ "alert('"+msg+"');"
-					+ "location.href='./login.html';"
-					+ "</script>");
-			}
-			catch(Exception e) {
-				System.out.println("Database 정보 오류!!");
-			}
-		}
-	}
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html; charset=utf-8");
+        
+        String mtitle = request.getParameter("mtitle").intern();
+        String mname = request.getParameter("mname").intern();
+        String mpass = request.getParameter("mpass").intern();
+        String mfile = request.getParameter("mfile").intern();
+        String mcnt = request.getParameter("mcnt").intern();
+
+        PrintWriter pw = response.getWriter(); //스크립트 출력
+        if(mtitle == "" || mname == "" || mpass == "" || mfile == "" || mcnt == "") {
+            pw.write("<script>"
+                    + "alert('올바른 정보가 전달되지 않으셨습니다.');"
+                    + "history.go(-1);"
+                    + "</script>");
+        }
+        else {
+            try {
+                this.db = new dbconfig();
+                Connection con = this.db.dbinfo();
+                //람다식 형태의 코드로 작성
+                String sql = "insert into fromlist values ("
+                        + "'0', ?, ?, ?, ?, ?, now(), '0')";
+                this.ps = con.prepareStatement(sql);
+                this.ps.setString(1, mtitle);
+                this.ps.setString(2, mname);
+                this.ps.setString(3, mpass);
+                this.ps.setString(4, mfile);
+                this.ps.setString(5, mcnt);
+
+                int call = this.ps.executeUpdate();
+                String msg = "";
+                if(call > 0) {
+                    msg = "정상적으로 글쓰기가 완료되었습니다.";
+                    this.ps.close();
+                    con.close();
+
+                }
+                else {
+                    msg = "글쓰기가 원활하게 진행되지 않았습니다.";
+                }
+                pw.write("<script>"
+                    + "alert('"+msg+"');"
+                    + "location.href='./list.html';"
+                    + "</script>");
+            }
+            catch(Exception e) {
+                System.out.println("Database 정보 오류!!");
+            }
+        }
+    }
 }

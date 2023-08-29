@@ -59,4 +59,14 @@
   	<url-pattern>/shop/loginok.do</url-pattern>
   </servlet-mapping>
   
+  <!-- 게시판 글쓰기 -->
+  <servlet>
+  	<servlet-name>write_from</servlet-name>
+  	<servlet-class>web.writeok</servlet-class>
+  </servlet>
+   <servlet-mapping>
+  	<servlet-name>write_from</servlet-name>
+  	<url-pattern>/board/writeok.do</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

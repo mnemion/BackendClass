@@ -1,0 +1,3 @@
+function listok(){
+	alert("test");
+}

@@ -1,0 +1,63 @@
+package web;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class login extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
+    public login() {
+        super();
+    }
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
+		
+		String uid = request.getParameter("uid");
+		String upw = request.getParameter("upw");	//사용자가 입력한 패스워드 (미암호화)
+		dbconfig db = new dbconfig();
+		PreparedStatement ps = null;
+		try {
+			Connection con = db.dbinfo();	//DB 환경설정 연결
+			String password = "select password('"+upw+"') as pwd";
+			ps = con.prepareStatement(password);
+			// execute() => boolean(0) executeUpdate() => int
+			// executeQuery() => select전용 ResultSet를 받아야 함
+			ResultSet rs = ps.executeQuery();		//ResultSet => select된 값을 배열화
+			String user_pw = null;
+			while(rs.next()) {
+				user_pw = rs.getString("pwd");
+			}
+			con.close();
+			Connection con2 = db.dbinfo();
+			String sql = "select * from shop where mid=?";
+			ps = con2.prepareStatement(sql);
+			ps.setString(1, uid);	//아이디값
+			ResultSet rs2 = ps.executeQuery();
+			
+			String sql_id = "";	//DB에 저장된 사용자 아이디
+			String sql_pw = ""; //DB에 저장된 사용자 패스워드
+			while(rs2.next()) {
+				sql_id = rs2.getString("mid");
+				sql_pw = rs2.getString("mpassword");
+			}
+			con2.close();
+			ps.close();
+			
+			if() {
+				
+			}
+		}
+		catch(Exception e) {
+			System.out.println("DB 접속 오류 사항발생!");
+		}
+	}
+}

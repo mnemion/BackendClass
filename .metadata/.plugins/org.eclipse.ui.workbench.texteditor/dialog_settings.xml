@@ -6,23 +6,23 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="joinok"/>
+		<item key="selection" value="b_write"/>
 		<list key="findhistory">
+			<item value="b_write"/>
+			<item value="writeok"/>
+			<item value="writeok.do"/>
+			<item value="mtitle"/>
+			<item value="utitle"/>
+			<item value="list_ok"/>
+			<item value="join"/>
+			<item value="th"/>
+			<item value="form"/>
 			<item value="joinok"/>
 			<item value="muse"/>
 			<item value="dbinfo"/>
 			<item value="list"/>
 			<item value="&amp;personalInfo=on"/>
 			<item value="personalInfo"/>
-			<item value="id"/>
-			<item value="total"/>
-			<item value="counting"/>
-			<item value="imgfile"/>
-			<item value="BufferedWriter"/>
-			<item value="userpw"/>
-			<item value="useremail"/>
-			<item value="email"/>
-			<item value="box"/>
 		</list>
 		<list key="replacehistory">
 		</list>
