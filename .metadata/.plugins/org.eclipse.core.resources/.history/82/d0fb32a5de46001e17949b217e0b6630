@@ -1,0 +1,5 @@
+package javatest;
+//java17에 활용
+public interface setdb {
+
+}

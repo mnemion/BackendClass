@@ -1,0 +1,9 @@
+package javatest;
+
+public interface inter1 {
+	String name = "홍길동";	//필드에 적용된 전역 변수
+	public void a1();	//일반 메소드
+	default void aa1() {
+		
+	}
+}

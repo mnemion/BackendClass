@@ -1,0 +1,26 @@
+package javatest;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+//java17에 활용
+
+//DB활용 인터페이스 및 각종 문법
+public interface setdb {
+	public String user = "";
+	public String pass = "";
+	public String db = "";
+	
+	public void dbconnect(String user, String passwd, String db) throws Exception;
+	public static Connection info() throws Exception {
+		String db_driver = "com.mysql.jdbc.Driver";
+		String db_url = "jdbc:mysql://localhost:3306/"+db;
+		String db_user = user;
+		String db_pass = pass;
+		
+		Class.forName(db_driver);
+		Connection con = DriverManager.getConnection(db_url, db_user, db_pass);
+		
+		return con;
+	};
+}

@@ -1,0 +1,28 @@
+package javatest;
+
+//Thread를 이용하여 결과값을 돌출하는 프로세서를 작성하시오.
+/*
+ 응용문제1
+ 데이터가 다음과 같이 있습니다.
+ 10 5 19 22 13 6 4
+ 
+ 해당 Thread에 데이터를 하나씩 대입합니다.
+ 단, 결과값 형태는 다음과 같습니다.
+ 
+ 10 데이터가 입력되면 1~10까지 모두 더한 결과값 출력
+ 5 데이터가 입력되면 1~5까지 모두 더한 결과값 출력
+ 19 데이터가 입력되면 1~19까지 모두 더한 결과값 출력 형태로
+ 각각의 배열 데이터 값 범위만큼 더하여 결과값을 출력합니다.
+*/
+
+public class java19 {
+	public static void main(String[] args) {
+		int a[] = {10, 5, 19, 22, 13, 6, 4};
+	}
+}
+
+class plus extends Thread {
+	@Override
+	public void run() {
+	}
+}

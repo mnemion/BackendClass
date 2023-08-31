@@ -1,0 +1,18 @@
+package javatest;
+
+import java.sql.Connection;
+
+//Interface 활용
+public class java17 {
+	public static void main(String[] args) {
+		
+	}
+}
+
+//Class일 때 new 인스턴스 활용, 단, interface일 때는 interface명으로 활용
+class box7 implements setdb {
+	@Override
+	public void dbconnect(String user, String passwd, String db) throws Exception {
+		Connection con = setdb.info();
+	}
+}

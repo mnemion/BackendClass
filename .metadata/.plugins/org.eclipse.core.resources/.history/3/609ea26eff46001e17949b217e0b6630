@@ -1,0 +1,44 @@
+package javatest;
+//Thread란? CPU가 일할 수 있는 공간 (메인 Class는 사용 안함)
+//Thread란, 1개의 CPU 공간을 말함
+//MultiThread : 개발자가 1개 이상의 CPU 공간을 활용하는 사항
+
+public class java18 {
+	public static void main(String[] args) {
+		th1 t1 = new th1();
+		th2 t2 = new th2(100);
+		
+		t1.start();
+		t2.start();
+	}
+}
+
+class th1 extends Thread {
+	public void run() {
+		for (int i = 0; i < 10; i++) {
+			System.out.println("th1 : " + i);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
+
+class th2 extends Thread {
+	int b = 0;
+	public th2(int a) {
+		this.b = a;
+	}
+	public void run() {
+		for (int i = 0; i < this.b; i++) {
+			System.out.println("th2 : " + i);
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}

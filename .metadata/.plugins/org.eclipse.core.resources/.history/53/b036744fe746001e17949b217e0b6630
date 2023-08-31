@@ -1,0 +1,22 @@
+package javatest;
+
+public class test2 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
+
+abstract class tbox {
+	public void bbb() {
+		
+	}
+	public void tests(String a) {
+		
+	}
+}
+
+class cdata extends tbox {
+	
+}

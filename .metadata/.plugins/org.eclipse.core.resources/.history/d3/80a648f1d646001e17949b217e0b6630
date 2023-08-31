@@ -1,0 +1,13 @@
+package javatest;
+//Interface 활용
+//Interface 일반 메소드를 활용할 수 있음
+public class java16 {
+
+	public static void main(String[] args) {
+		
+	}
+}
+
+class box {
+	
+}

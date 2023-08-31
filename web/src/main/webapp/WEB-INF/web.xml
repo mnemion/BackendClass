@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <display-name>web</display-name>
+  
+  <!-- 게시판 글쓰기 -->
+  <servlet>
+  	<servlet-name>write_from</servlet-name>
+  	<servlet-class>web.writeok</servlet-class>
+  </servlet>
+   <servlet-mapping>
+  	<servlet-name>write_from</servlet-name>
+  	<url-pattern>/board/writeok.do</url-pattern>
+  </servlet-mapping>
+  
   <!-- xml에 오타 발생 시 서버가 실행되지 않습니다. -->
   <servlet>
   	<servlet-name>search</servlet-name> <!-- 가상으로 사용하는 이름(중복X) -->
@@ -57,16 +68,6 @@
    <servlet-mapping>
   	<servlet-name>login</servlet-name>
   	<url-pattern>/shop/loginok.do</url-pattern>
-  </servlet-mapping>
-  
-  <!-- 게시판 글쓰기 -->
-  <servlet>
-  	<servlet-name>write_from</servlet-name>
-  	<servlet-class>web.writeok</servlet-class>
-  </servlet>
-   <servlet-mapping>
-  	<servlet-name>write_from</servlet-name>
-  	<url-pattern>/board/writeok.do</url-pattern>
   </servlet-mapping>
   
 </web-app>

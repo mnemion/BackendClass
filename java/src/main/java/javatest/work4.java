@@ -19,30 +19,37 @@ import java.util.Scanner;
  그 외에 사용자 이름을 입력 시 "해당 사용자는 비회원입니다."라고 출력되도록 하시오.
  */
 
-abstract class Father {
-    String u_name;
-    abstract void f_method(String name);
-
-    static class Child extends Father {
-        void f_method(String name) {
-            u_name = name;
-            if (u_name.equals("홍길동") || u_name.equals("이순신") || u_name.equals("유관순")) {
-                System.out.println(u_name + "은 일반회원입니다.");
-            } else if (u_name.equals("강감찬") || u_name.equals("장보고")) {
-                System.out.println(u_name + "은 실버회원입니다.");
-            } else {
-                System.out.println("해당 사용자는 비회원입니다.");
-            }
-        }
-    }
-}
-
 public class work4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("사용자 이름을 입력하세요: ");
         String name = sc.nextLine();
-        Father.Child c = new Father.Child();
-        c.f_method(name);
+        father f = new box();
+        f.f_method(name);
+    }
+}
+
+abstract class father {
+    String u_name;
+    abstract void f_method(String name);
+}
+
+class box extends father {
+    @Override
+    void f_method(String name) {
+        box2 b2 = new box2();
+        b2.printResult(name);
+    }
+
+    class box2 {
+        void printResult(String name) {
+            if (name.equals("홍길동") || name.equals("이순신") || name.equals("유관순")) {
+                System.out.println(name + "은 일반회원입니다.");
+            } else if (name.equals("강감찬") || name.equals("장보고")) {
+                System.out.println(name + "은 실버회원입니다.");
+            } else {
+                System.out.println("해당 사용자는 비회원입니다.");
+            }
+        }
     }
 }

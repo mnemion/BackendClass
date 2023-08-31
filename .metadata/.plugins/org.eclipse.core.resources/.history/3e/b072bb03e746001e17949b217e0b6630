@@ -1,0 +1,20 @@
+package javatest;
+
+public class test2 {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
+
+abstract class tbox {
+	public abstract void bbb();
+}
+
+class cdata extends tbox {
+	@Override
+	public void bbb() {
+				
+	}
+}

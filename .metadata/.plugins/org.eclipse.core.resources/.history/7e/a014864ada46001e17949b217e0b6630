@@ -1,0 +1,16 @@
+package javatest;
+
+public interface inter1 {
+	String name = "홍길동";	//필드에 적용된 전역 변수
+	String userid = "hong";
+	public void a1();	//일반 메소드
+	default void aa1() {
+		System.out.println(this.userid);
+	}
+	class zzz {
+		
+		public void zzjj() {
+			System.out.println("Interface안에 외부 클래스 활용");
+		}
+	}
+}

@@ -1,0 +1,12 @@
+package javatest;
+
+//Interface 활용
+public class java17 {
+	public static void main(String[] args) {
+		
+	}
+}
+
+class box7 implements setdb {
+	
+}

@@ -1,0 +1,11 @@
+package javatest;
+
+import java.sql.Connection;
+
+//java17에 활용
+public interface setdb {
+	public static Connection info() throws Exception {
+		return null;
+		
+	}
+}

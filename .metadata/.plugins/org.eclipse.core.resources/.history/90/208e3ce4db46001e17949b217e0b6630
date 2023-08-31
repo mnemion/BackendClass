@@ -1,0 +1,20 @@
+package javatest;
+
+import java.util.Scanner;
+
+public interface inter1 {
+	String name = "홍길동";	//필드에 적용된 전역 변수
+	String userid = "hong";
+	Scanner sc = null;
+	
+	public void a1();	//일반 메소드
+	default void aa1() {	//Override 필수로 하지 않고 필요할 때만 로드하여 사용할 때 default를 이용함
+		System.out.println(this.userid);
+	}
+	
+	class zzz {
+		public void zzjj() {
+			System.out.println("Interface 안에 외부 클래스 활용");
+		}
+	}
+}

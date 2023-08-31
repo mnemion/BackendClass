@@ -1,0 +1,8 @@
+package javatest;
+
+public interface inter1 {
+	String name = "홍길동";
+	public void a1() {
+		
+	}
+}

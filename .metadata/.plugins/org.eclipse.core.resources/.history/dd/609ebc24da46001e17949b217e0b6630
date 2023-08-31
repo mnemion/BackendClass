@@ -1,0 +1,20 @@
+package javatest;
+
+public interface inter1 {
+	String name = "홍길동";	//필드에 적용된 전역 변수
+	String userid = "hong";
+	public void a1();	//일반 메소드
+	default void aa1() {
+		System.out.println(this.userid);
+	}
+	class zzz extends mother {
+		@Override
+		public void m_mother(int a, int b) {
+			// TODO Auto-generated method stub
+			super.m_mother(a, b);
+		}
+		public void zzjj() {
+			
+		}
+	}
+}

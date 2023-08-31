@@ -1,0 +1,19 @@
+package javatest;
+//Interface 활용
+//Interface 일반 메소드를 활용할 수 있음
+public class java16 {
+
+	public static void main(String[] args) {
+		
+	}
+}
+
+//extends => abstract, 외부 클래스를 로드할 때
+//interface => implements
+class box6 implements inter1 {
+	@Override
+	public void a1() {
+		// TODO Auto-generated method stub
+		
+	}
+}

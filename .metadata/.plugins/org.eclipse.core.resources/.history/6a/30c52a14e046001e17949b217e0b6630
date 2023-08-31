@@ -1,0 +1,22 @@
+package javatest;
+
+import java.sql.Connection;
+
+//Interface 활용
+public class java17 {
+	public static void main(String[] args) {
+		
+	}
+}
+
+class box7 implements setdb {
+	@Override
+	public void dbconnect() {
+		try {
+		Connection con = new setdb.info();	
+		}
+		catch(Exception e) {
+			
+		}
+	}
+}
