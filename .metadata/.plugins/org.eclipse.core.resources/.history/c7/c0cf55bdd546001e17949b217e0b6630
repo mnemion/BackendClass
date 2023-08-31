@@ -1,9 +1,0 @@
-package javatest;
-//Interface 활용
-public class java16 {
-
-	public static void main(String[] args) {
-		
-	}
-
-}

@@ -1,9 +1,0 @@
-package javatest;
-//Thread란, CPU가 일할 수 있는 공간 (메인 Class는 사용 안함)
-public class java18 {
-
-	public static void main(String[] args) {
-		
-	}
-}
-

@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<div>
+<p>[예약 시스템]</p>
+고객명 : <input type="text" name="pname" readonly="readonly"><br>
+아이디 : <input type="text" name="pid" readonly="readonly"><br>
+ROOM 선택: <br>
+<label>
+<input type="radio" name="room" value="패밀리룸">패밀리룸
+</label>
+<label>
+<input type="radio" name="room" value="키즈룸">키즈룸
+</label>
+<label>
+<input type="radio" name="room" value="러블리룸">러블리룸
+</label>
+인원 : <select>
+</select>
+</div>

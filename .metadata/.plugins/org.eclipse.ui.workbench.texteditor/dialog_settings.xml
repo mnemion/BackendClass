@@ -6,8 +6,10 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="Lorem ipsum dolor"/>
+		<item key="selection" value="FileName"/>
 		<list key="findhistory">
+			<item value="filename"/>
+			<item value="FinalPriceCalculator"/>
 			<item value="Lorem ipsum dolor"/>
 			<item value="&lt;html&gt;"/>
 			<item value="notice"/>
@@ -21,8 +23,6 @@
 			<item value="mtitle"/>
 			<item value="list_ok"/>
 			<item value="join"/>
-			<item value="th"/>
-			<item value="form"/>
 		</list>
 		<list key="replacehistory">
 		</list>

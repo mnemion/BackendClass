@@ -1,10 +1,15 @@
 package web;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.http.HttpServlet;
@@ -36,26 +41,60 @@ public class writeok extends HttpServlet {
         //System.out.println(file.getSize());    //파일 사이즈
         //System.out.println(file.getContentType());    //파일에 대한 속성
         //System.out.println(file.getHeader(getServletName()));    //파일명
+        //String filenm = file.getSubmittedFileName().intern();
         
         String mtitle = request.getParameter("utitle").intern();
         String mname = request.getParameter("uname").intern();
         String mpass = request.getParameter("upass").intern();
         
         Part file = request.getPart("mfile");
-        String filenm = file.getSubmittedFileName().intern();
-        if(filenm.equals("")) {
-            System.out.println("첨부파일 없음");
-            filenm = null;
-        }
-        else {
-            System.out.println("첨부파일이 있음");
-        }
+        
+		//날짜 => 파일업로드 같은 이름일 경우 덮어쓰는 현상을 막기 위해서 사용함
+		Date time = new Date();
+		SimpleDateFormat sf = new SimpleDateFormat("yyyyMMddHHmmss");
+		String timetext = sf.format(time);
+		
+		//첨부파일 용량
+		int filesize = (int)file.getSize();
+		//첨부파일 저장경로
+		String savepath = request.getServletContext().getRealPath("/board/upload/");
+		//System.out.println(savepath);
+		//업로드시 바뀌는 파일명
+		String filename = timetext+"_"+file.getSubmittedFileName();
+		//실제 저장되는 형태
+		String uploadfile = savepath + filename;
+		//[Stream으로 첨부파일 처리]
+		InputStream is = file.getInputStream();	//스트림으로 변환
+		FileOutputStream fs = new FileOutputStream(uploadfile);
+		
+		
+		if(filesize == 0) {
+			//첨부파일이 없을 때의 SQL
+			
+		}else {
+			//첨부파일이 있을 때의 SQL
+			byte[] buf = new byte[is.available()];
+			int size = 0;
+			while((size = is.read(buf)) != -1) {
+				fs.write(buf,0,size);
+				fs.flush();
+			}
+			fs.close();
+			is.close();
+		}
+		//경로지정 (DB에 저장되는 경로와 같음)
+		String dbfile = "./upload/"+filename;
+		
+		//View로 출력 (view.jsp 전달)
+		request.setAttribute("dbfile", dbfile);
+		RequestDispatcher ds = request.getRequestDispatcher("./view.jsp");
+		ds.forward(request, response);
         
         String mcnt = request.getParameter("texts").intern();
-
+        
         PrintWriter pw = response.getWriter(); //스크립트 출력
-        if(mtitle == "" || mname == "" || mpass == "" || filenm == "" || mcnt == "") {
-            pw.write("<script>"
+        if(mtitle == "" || mname == "" || mpass == "" || filename == "" || mcnt == "") {
+        	pw.write("<script>"
                     + "alert('올바른 정보가 전달되지 않으셨습니다.');"
                     + "history.go(-1);"
                     + "</script>");
@@ -71,7 +110,7 @@ public class writeok extends HttpServlet {
                 this.ps.setString(1, mtitle);
                 this.ps.setString(2, mname);
                 this.ps.setString(3, mpass);
-                this.ps.setString(4, filenm);
+                this.ps.setString(4, filename);
                 this.ps.setString(5, mcnt);
 
                 int call = this.ps.executeUpdate();
@@ -94,7 +133,5 @@ public class writeok extends HttpServlet {
                 System.out.println("Database 정보 오류!!");
             }
         }
-        
-        
     }
 }

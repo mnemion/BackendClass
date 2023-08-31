@@ -1,0 +1,46 @@
+		String q[] = {"고객명을 입력하세요?", "아이디를 입력하세요?", "패스워드를 입력하세요?"};
+		Scanner sc = new Scanner(System.in);
+		String a[] = new String[q.length];
+		int w = 0;
+		while(w < q.length) {
+			System.out.println(q[w]);
+			a[w] = sc.nextLine();
+			w++;
+		}
+		System.out.println(Arrays.toString(a));
+
+대부분 배열로 나열함
+
+CREATE TABLE survey (
+    midx INT NOT NULL AUTO_INCREMENT,
+    mgender ENUM('남성', '여성') NOT NULL,
+    mage ENUM('10대', '20대', '30대', '40대', '50대 이상') NOT NULL,
+    mclimate_crisis ENUM('매우 심각하다', '심각하다', '보통이다', '심각하지 않은 편이다') NOT NULL,
+    mdate timestamp not null default current_timestamp,
+    PRIMARY KEY (midx)
+);
+
+[일반]
+CREATE TABLE general_customers (
+    id INT NOT NULL AUTO_INCREMENT,
+    user_id VARCHAR(255) NOT NULL,
+    password CHAR(60) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    phone_number CHAR(11) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+);
+
+[사업자]
+CREATE TABLE business_customers (
+    id INT NOT NULL AUTO_INCREMENT,
+    user_id VARCHAR(255) NOT NULL,
+    password CHAR(60) NOT NULL,
+    company_name VARCHAR(255) NOT NULL,
+    phone_number CHAR(11) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    business_number CHAR(10),
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (id)
+);

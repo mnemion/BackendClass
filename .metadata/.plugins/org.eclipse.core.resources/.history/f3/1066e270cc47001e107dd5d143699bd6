@@ -1,0 +1,31 @@
+package web;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/*
+ 응용문제1
+ 모바일 login.jsp에서 넘어온 아이디, 패스워드를 이용하여
+ session을 통하여 정상적으로 로그인이 되도록 하며,
+ 로그인이 완료되었을 경우 index2.jsp로 이동되도록 합니다.
+ 
+ 아이디 / 패스워드
+*/
+
+@WebServlet("/m/mlogin.do")
+public class mlogin extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+    public mlogin() {
+        super();
+    }
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	}
+}

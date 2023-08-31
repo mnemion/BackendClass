@@ -18,6 +18,10 @@ class FinalPriceCalculator implements Runnable {
 	public FinalPriceCalculator(int[] prices, int[] quantities) {
 		this.prices = prices;
 		this.quantities = quantities;
+		
+		for(int i = 0; i < prices.length; i++) {
+			int finalPrice = prices[i] * quantities[i];
+		}
 	}
 	
 	@Override

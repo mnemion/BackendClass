@@ -17,7 +17,7 @@
 			height: 500px;
 		}
     </style>
-    <script src="./board.js?v=1"></script>
+    <script src="./board.js?v=2"></script>
     <script src="./ckeditor/ckeditor.js"></script>
 </head>
 <body>
@@ -66,7 +66,7 @@
                     <input type="file" class="form-control-file border" name="mfile">
                 </div>
                 <div class="form-group">
-                    <textarea name="texts"></textarea>
+                    <textarea name="texts" id="texts"></textarea>
                 </div>
                 <button type="button" class="btn btn-primary" onclick="b_write()">글쓰기</button>
             </form>
@@ -77,5 +77,6 @@
 <!-- ckeditor 장착 ckeditor5(TS) ckeditor4(JS) -->
 <script>
 	CKEDITOR.replace("texts");
+	CKEDITOR.config.resize_enabled = false;	//사이즈 조절 불가
 </script>
 </html>

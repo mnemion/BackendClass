@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	String user_id = "";
+	String user_name = "";
+	try{
+		user_id = (String) session.getAttribute("perid");
+		user_name = (String) session.getAttribute("pernm");
+	}
+	catch(Exception e){
+		
+	}
+%>
+<script>
+	function gopage() {
+		location.href='./login.jsp';
+	}
+</script>
+<div>
+<% if(user_id == "") { %>
+<span onclick="gopage()">로그인</span>
+<% } %>
+</div>

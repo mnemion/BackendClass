@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모바일 전용 웹페이지</title>
+</head>
+<body>
+[모바일 전용 input 형태]<br>
+입력1 <input type="text"><br>		<!-- 일반 입력 (P, M) -->
+입력2 <input type="number"><br>	<!-- 숫자만 입력 (M) -->
+입력3 <input type="color"><br>	<!-- 색상선택 (P, M) -->
+입력4 <input type="tel"><br>		<!-- 전화번호 (M) -->
+입력5 <input type="time"><br>		<!-- 시간선택 (P, M) -->
+입력6 <input type="date"><br>		<!-- 날짜선택 (P, M) -->
+입력7 <input type="datetime-local"><br>	<!-- 날짜, 시간 동시에 입력 (P, M) -->
+입력8 <input type="week"><br>
+</body>
+</html>

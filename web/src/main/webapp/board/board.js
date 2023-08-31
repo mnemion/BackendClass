@@ -1,5 +1,16 @@
 function b_write(){
+	//조건문
+	var t = CKEDITOR.instances.texts.getData();
+	if(t == ""){
+		alert("게시판 내용을 입력해주세요.");
+	}
+	else{
+		f.submit();
+	}
+	
+	
     //글쓰기
+    /*
     if(document.getElementsByName("utitle")[0].value == ""){
         alert("제목을 입력해주세요.");
     }
@@ -15,4 +26,5 @@ function b_write(){
     else {
         f.submit();
     }
+    */
 }

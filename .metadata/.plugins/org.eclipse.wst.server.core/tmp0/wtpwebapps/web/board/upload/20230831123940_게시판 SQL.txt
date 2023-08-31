@@ -1,0 +1,11 @@
+CREATE TABLE board(
+    midx INT NOT NULL AUTO_INCREMENT,
+    mtitle TEXT NOT NULL,
+    mname CHAR(50) NOT NULL,
+    mpass VARCHAR(40) NOT NULL,
+    mfile VARCHAR(100) NULL,
+    mcentent TEXT NOT NULL,
+    mtime timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    mview INT(5) NOT NULL,
+    PRIMARY KEY(midx)
+);

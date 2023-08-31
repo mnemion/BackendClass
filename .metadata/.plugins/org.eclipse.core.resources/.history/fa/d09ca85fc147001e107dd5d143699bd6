@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>모바일 전용 웹페이지</title>
+</head>
+<body>
+[모바일 전용 input 형태]<br>
+입력1 <input type="text"><br>
+입력2 <input type="number"><br>
+</body>
+</html>
