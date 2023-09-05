@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
-    <fullyQualifiedTypeName name="java.io.OutputStreamWriter"/>
-    <fullyQualifiedTypeName name="javax.servlet.http.Part"/>
-    <fullyQualifiedTypeName name="javax.servlet.annotation.MultipartConfig"/>
-    <fullyQualifiedTypeName name="java.io.FileWriter"/>
     <fullyQualifiedTypeName name="example.box_office"/>
     <fullyQualifiedTypeName name="org.apache.tomcat.jni.OS"/>
     <fullyQualifiedTypeName name="java.io.BufferedInputStream"/>
@@ -46,11 +41,9 @@
     <fullyQualifiedTypeName name="javatest.mother.child"/>
     <fullyQualifiedTypeName name="javatest.mother"/>
     <fullyQualifiedTypeName name="web.dbconfig"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="java.sql.Connection"/>
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
-    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
     <fullyQualifiedTypeName name="java.util.Scanner"/>
     <fullyQualifiedTypeName name="java.lang.System"/>
     <fullyQualifiedTypeName name="java.io.InputStream"/>
@@ -60,4 +53,11 @@
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
     <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+    <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="org.json.simple.JSONArray"/>
+    <fullyQualifiedTypeName name="org.json.simple.JSONObject"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
 </qualifiedTypeNameHistroy>

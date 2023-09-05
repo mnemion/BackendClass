@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Ajax + setInterval, setTimeout</title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>
+					상품명
+				</th>
+				<th>
+					가격
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>사과</td>
+				<td id="pd0"></td>
+			</tr>
+			<tr>
+				<td>북숭아</td>
+				<td id="pd1"></td>
+			</tr>
+			<tr>
+				<td>포도</td>
+				<td id="pd2"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<script>
+	function data_load() {
+		var ajax = new XMLHttpRequest();
+		ajax.onreadystatechange = function() {
+		//console.log(ajax.readyState);
+		/*
+		0 : 요청에 대한 초기화 확인
+		1 : 서버에 연결됨
+		2 : 서버에 파일을 요청 받음
+		3 : 요청을 처리중
+		4 : 요청에 대한 데이터 처리 완료
+		*/
+		if(ajax.readyState == 4){
+        	if(ajax.status == 200){
+            	var data = JSON.parse(this.response);
+            	//console.log(data["adata"]);
+            	var f;
+            	for(f = 0; f < data["adata"].length; f++){
+					document.getElementById("pd" + f).innerHTML = data["adata"][f];					
+      			}
+      		}
+        	else{
+            	console.log("통신오류 발생!!")
+        	}
+    	}
+	}
+	
+	ajax.open("GET", "./data.json?v=1");
+	ajax.send();
+}
+	setInterval(data_load, 5000);
+</script>
+</html>

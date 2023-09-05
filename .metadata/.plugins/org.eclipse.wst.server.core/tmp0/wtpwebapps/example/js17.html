@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Servlet + JSON + Ajax - 외부서버 연계(job_data.java는 승균이형파트)</title>
+</head>
+<body>
+    <h3 style="margin-left:610px;">2023 01 ~ 08 Backend 취업율</h3>
+	<table border="1" style="margin:0 auto;">
+		<thead>
+			<tr>
+				<th>지역명</th>
+				<th>국비지원 총 인원</th>
+				<th>미취업인원</th>
+				<th>취업인원</th>
+			</tr>
+		</thead>
+		<tbody id="datalist1"></tbody>
+	</table>
+
+    <script>
+        var ajax = new XMLHttpRequest();
+        ajax.onreadystatechange = function(){
+            if(ajax.readyState == 4){
+                if(ajax.status == 200){
+                    var msg = this.response;
+                    if(msg == "error"){
+                        alert("서버 접근에 문제가 발생함");
+                    }
+                    else if(msg == "key_error"){
+                        alert("보안키가 오류 발생 했습니다.");
+                    }
+                    else{
+                        var all_list = JSON.parse(msg);
+                        var html = document.getElementById("datalist1");
+                        all_list["user_list"].forEach(function(a,b){
+                            html.innerHTML += `<tr>
+                            <td>`+a["user_name"]+`</td>
+                            <td>`+a["user_person"]+`</td>
+                            <td>`+a["nojob"]+`</td>
+                            <td>`+a["yesjob"]+`</td>
+                            <tr>`;
+                        });
+                    }
+                }
+                else{
+                    console.log("통신 오류 발생!!")
+                }
+            }
+        }		
+        ajax.open("GET","http://192.168.110.214:8081/example/job_data.do?key=a1234");
+        ajax.send();
+    </script>
+</body>
+</html>

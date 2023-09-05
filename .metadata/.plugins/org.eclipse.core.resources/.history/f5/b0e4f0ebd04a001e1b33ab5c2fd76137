@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax + setInterval, setTimeout(최종편)</title>
+</head>
+<body>
+	<table border="1" id="news">
+		<tr>
+			<td id="pd0"></td><td id="cd0"></td>
+			<td id="pd1"></td><td id="cd1"></td>
+			<td id="pd2"></td><td id="cd2"></td>
+			<td id="pd3"></td><td id="cd3"></td>
+			<td id="pd4"></td><td id="cd4"></td>
+		</tr>
+	</table>
+</body>
+<script>
+	function data_load() {
+	var ajax = new XMLHttpRequest();
+	ajax.onreadystatechange = function() {
+		if(ajax.readyState == 4){
+			if(ajax.status == 200){
+				var data = JSON.parse(this.response);
+				var f;
+	            for(f = 0; f < data.length; f++){
+	            	if(data[f][1] == "서울신문"){
+						document.getElementById("pd4").innerHTML = data[f][0];
+					}
+					else{
+						document.getElementById("pd" + f).innerHTML = data[f][0];
+					}
+	      		}
+	      	}
+	      	else{
+	            console.log("통신오류 발생!!");
+			}
+		}
+	}
+	ajax.open("GET", "./news.json");
+	ajax.send();
+}
+	setInterval(data_load, 10000);	
+</script>
+</html>

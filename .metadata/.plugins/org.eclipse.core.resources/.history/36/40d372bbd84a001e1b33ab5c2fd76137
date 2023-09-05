@@ -1,0 +1,29 @@
+package example;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+public class json1 {
+
+	public static void main(String[] args) throws Exception {
+		JSONObject jo = new JSONObject();
+		JSONArray ja = new JSONArray();
+		String user[] = {"2600", "3200", "1900"};
+		int w = 0;
+		while(w < user.length) {
+			ja.add(user[w]);
+			w++;
+		}
+		jo.put("adata", ja);
+		//System.out.println(jo);
+		FileWriter fw = new FileWriter("E:\\project\\example\\src\\main\\webapp\\data.json", true);
+		BufferedWriter bw = new BufferedWriter(fw);
+		bw.write(jo.toString());
+		bw.flush();
+		bw.close();
+		bw.close();
+	}
+}

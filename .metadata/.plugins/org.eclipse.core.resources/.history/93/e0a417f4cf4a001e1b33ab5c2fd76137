@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax + setInterval, setTimeout(최종편)</title>
+</head>
+<body>
+	<table border="1" id="news">
+		<tr>
+			<td id="pd0"></td>
+			<td id="pd1"></td>
+			<td id="pd2"></td>
+			<td id="pd3"></td>
+		</tr>
+	</table>
+</body>
+<script>
+	function data_load() {
+	var ajax = new XMLHttpRequest();
+	ajax.onreadystatechange = function() {
+		if(ajax.readyState == 4){
+			if(ajax.status == 200){
+				var data = JSON.parse(this.response);
+				var f;
+	            for(f = 0; f < data.length; f++){
+					document.getElementById("pd" + f).innerHTML = data[f];					
+	      		}
+	      	}
+	      	else{
+	            console.log("통신오류 발생!!");
+			}
+		}
+	}
+	ajax.open("GET", "./news.json");
+	ajax.send();
+}
+	setInterval(data_load, 5000);	
+</script>
+</html>

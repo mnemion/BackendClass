@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>JS SetTimeout, SerInterval 응용편</title>
+</head>
+<body>
+	<p>setTimeout</p>
+	<input type="button" value="시작" onclick="">
+	<input type="button" value="정지" onclick="">
+	
+	<p>setInterval</p>
+	<input type="button" value="시작" onclick="">
+	<input type="button" value="정지" onclick="">
+</body>
+<script>
+	var timer = 0;
+	
+	
+</script>
+</html>

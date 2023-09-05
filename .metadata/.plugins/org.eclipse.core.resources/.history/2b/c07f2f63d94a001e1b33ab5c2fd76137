@@ -1,0 +1,33 @@
+package example;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+//js14.html에서 사용한 data.json를 제작하여 활용한 형태
+/*
+ json1.java에서 원시 배열값을 json으로 변환 후 Front가 해당 데이터를
+ ajax로 로드하여 웹 페이지에 출력하는 형태
+*/
+
+public class json1 {
+
+	public static void main(String[] args) throws Exception {
+		JSONObject jo = new JSONObject();
+		JSONArray ja = new JSONArray();
+		String user[] = {"2600", "3200", "1900"};
+		int w = 0;
+		while(w < user.length) {
+			ja.add(user[w]);
+			w++;
+		}
+		jo.put("adata", ja);
+		FileWriter fw = new FileWriter("E:\\project\\example\\src\\main\\webapp\\data.json", false);
+		BufferedWriter bw = new BufferedWriter(fw);
+		bw.write(jo.toString());
+		bw.flush();
+		bw.close();
+		bw.close();
+	}
+}

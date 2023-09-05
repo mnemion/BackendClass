@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS SetTimeout, SerInterval</title>
+</head>
+<script>
+	//시간함수를 쓸 때는 변수가 필요함
+	var timer = 0;
+	
+	
+	
+</script>
+<body>
+	
+</body>
+</html>

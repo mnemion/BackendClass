@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Ajax + setInterval, setTimeout(최종편)</title>
+</head>
+<body>
+	<table border="1" id="news">
+		<tr>
+			<td id="pd0"></td><td id="cd0"></td>
+			<td id="pd1"></td><td id="cd1"></td>
+			<td id="pd2"></td><td id="cd2"></td>
+			<td id="pd3"></td><td id="cd3"></td>
+			<td id="pd4"></td><td id="cd4"></td>
+		</tr>
+	</table>
+</body>
+<script>
+	function ajax(){
+		var date = new Date().toString();
+		var req = new XMLHttpRequest();
+		req.onreadystatechange = function(){
+			
+		}
+	}
+</script>
+</html>

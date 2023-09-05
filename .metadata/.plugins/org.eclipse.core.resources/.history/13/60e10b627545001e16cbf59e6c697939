@@ -1,9 +1,0 @@
-package web;
-
-import java.sql.Connection;
-
-public class dbconfig {
-	public static Connection dbinfo() throws Exception {
-		
-	}
-}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 - 기초함수 + 즉시실행 형태</title>
+</head>
+<!--
+	함수 = method
+	일반함수 : 호출형태로 실행 되는 함수
+	이벤트 핸들링 함수 : onclick, onchange, onsubmit
+	이벤트 버블링 함수 : 하위 > 상위 오브젝트에 전달하는 형태! 예 : (li > ul)
+	버블링 함수 : 전체 동의 클릭 중 하위 동의안함 하나라도 체크 아웃 시 자동으로 전체 동의가 풀리는 경우
+	이벤트 캡쳐링 함수 : 상위 > 하위로 오브젝트를 전달하는 형태 예 : (ul > li)
+	캡쳐링 함수 : 전체동의 클릭 시 하위 체크박스 체크인 되는 상황
+	리턴 함수 : return
+ -->
+<body>
+	숫자1 : <input type="text" id="no1"><br>
+	숫자2 : <input type="text" id="no2"><br>
+	<button type="button" onclick="abc()">클릭</button>
+</body>
+<script>
+	function abc(){	//이벤트 핸들링 함수
+		/*
+		응용문제1
+		숫자1과 숫자2에 다음과 같이 숫자값을 모두 입력한다.
+		예를 들어, 숫자1에 1 숫자 2에 10 넣을 경우
+		1~10 모든 숫자를 더한다.
+		결과값은 얼마가 나올까? 55가 출력되도록 한다.
+		*/
+		/*
+		var aa = document.getElementById("no1");
+		var bb = document.getElementById("no2");
+		var sum = 0;
+		var f;
+		for(f=aa.value; f<=bb.value; f++){ //값을 가져올 때는 무조건 value
+			sum = sum + Number(f);
+		}
+		console.log(sum);
+		*/
+		
+		//또 다른 방식으로 풀어보자
+		var num1 = parseInt(document.getElementById("no1").value);
+    	var num2 = parseInt(document.getElementById("no2").value);
+    	var sum = 0;
+    	for (var i = num1; i <= num2; i++) {
+       		sum += i;
+    	}
+   		alert("결과값: " + sum);
+	}
+    
+	
+	
+	var a = "전역변수";
+	function aaa(){	//일반함수
+		var b = "지역변수";
+		console.log(a);
+		a = "전역변수값 변화";
+		bbb();
+	}
+	function bbb(){	//일반함수
+		var b = "지역변수";
+		console.log(a);
+		var sum = ccc();	//호출 후 리턴값을 받음
+		console.log(sum[0]);
+		console.log(sum[1]);
+	}
+	function ccc(){	//리턴함수
+		var b = "리턴값";
+		var c = "리턴값2"
+		return [b, c];
+	}
+	aaa();
+</script>
+</html>

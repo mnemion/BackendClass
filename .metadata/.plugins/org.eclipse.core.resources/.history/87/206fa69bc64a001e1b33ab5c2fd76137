@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS SetTimeout, SerInterval SKIP 응용편</title>
+</head>
+<body>
+	<span id="skip" style="border: 1px solid black;">
+		SKIP 5
+	</span>
+</body>
+<script>
+	var timer = 5;
+	var set;
+	function hskip(){
+		var id = document.getElementById("skip");
+	}
+	set = setInterval(hskip, 1000);
+</script>
+</html>

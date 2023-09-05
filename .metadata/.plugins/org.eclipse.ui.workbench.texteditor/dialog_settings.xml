@@ -6,23 +6,23 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="FileName"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
-			<item value="filename"/>
-			<item value="FinalPriceCalculator"/>
-			<item value="Lorem ipsum dolor"/>
-			<item value="&lt;html&gt;"/>
-			<item value="notice"/>
-			<item value="table"/>
-			<item value="ResultSet"/>
-			<item value="b_write"/>
-			<item value="mfile"/>
-			<item value="writeok.do"/>
-			<item value="utitle"/>
-			<item value="writeok"/>
-			<item value="mtitle"/>
-			<item value="list_ok"/>
-			<item value="join"/>
+			<item value="192.168.110.214"/>
+			<item value="http://192.168.110.214:8081"/>
+			<item value="user_name"/>
+			<item value="analyze"/>
+			<item value="key == &quot;&quot;"/>
+			<item value="ajaxdata.do"/>
+			<item value="ck"/>
+			<item value="reserveok.do"/>
+			<item value="패밀리룸"/>
+			<item value="userid"/>
+			<item value="perid"/>
+			<item value="login"/>
+			<item value="mlogin"/>
+			<item value="logout"/>
+			<item value="dbfile"/>
 		</list>
 		<list key="replacehistory">
 		</list>

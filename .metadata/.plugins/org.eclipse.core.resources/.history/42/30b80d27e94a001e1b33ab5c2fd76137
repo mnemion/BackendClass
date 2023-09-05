@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Servlet + JSON + Ajax - ajaxdata.java와 연계</title>
+</head>
+<body>
+	
+</body>
+<script>
+	var aj = new XMLHttpRequest();
+	aj.onreadystatechange = function(){
+		if(aj.readyState == 4){
+			if(aj.status == 200){
+				var msg = JSON.parse(this.response);
+				if(msg == "error"){
+					
+				}
+			}
+			else{
+				console.log("통신 오류 발생!!")
+			}
+		}
+	}
+	aj.open("GET", "./ajaxdata.do");
+	aj.send();
+</script>
+</html>

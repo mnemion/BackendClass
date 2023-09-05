@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS SetTimeout, SerInterval</title>
+</head>
+<script>
+	//시간함수를 쓸 때는 변수가 필요함
+	var timer = 0;
+	function set1(){
+		console.log(timer);
+		timer++;
+		setTimeout(set1, 1000);
+	}
+	setTimeout(set1, 3000);	//1000 = 1초
+	
+	var timer2 = 0;
+	function set2(){
+		console.log(timer2);
+		timer2++;
+	}
+	setInterval(set2, 2000);
+	
+</script>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Ajax + setInterval, setTimeout</title>
+</head>
+<body>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>
+					상품명
+				</th>
+				<th>
+					가격
+				</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>사과</td>
+				<td id="pd0"></td>
+			</tr>
+			<tr>
+				<td>북숭아</td>
+				<td id="pd1"></td>
+			</tr>
+			<tr>
+				<td>포도</td>
+				<td id="pd2"></td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+<script>
+	var ajax = new XMLHttpRequest();
+ajax.onreadystatechange = function() {
+    if(ajax.readyState == 4){
+        if(ajax.status == 200){
+            var data = JSON.parse(this.response);
+            console.log(data);
+            // Save data to HTML table
+            for (var i = 0; i < data.adata.length; i++) {
+                document.getElementById("pd" + i).innerHTML = data.adata[i];
+            }
+        }
+        else{
+            console.log("통신오류 발생!!")
+        }
+    }
+}
+	
+	ajax.open("GET", "./data.json");
+	ajax.send();
+</script>
+</html>

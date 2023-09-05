@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Servlet + JSON + Ajax - 외부서버 연계</title>
+</head>
+<body> <!-- 192.168.110.214 -->
+	<table border="1">
+		<thead>
+			<tr>
+				<th>이름</th>
+				<th>성격분석</th>
+			</tr>
+		</thead>
+		<tbody id="datalist"></tbody>
+	</table>
+</body>
+</html>

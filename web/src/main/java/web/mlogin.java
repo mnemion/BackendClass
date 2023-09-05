@@ -30,7 +30,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/m/mlogin.do")
 public class mlogin extends HttpServlet {
 	PrintWriter pw = null;
-	HttpSession session = null;
+	HttpSession se = null;
 	
 	private static final long serialVersionUID = 1L;
 
@@ -44,8 +44,8 @@ public class mlogin extends HttpServlet {
 		
 		String mid = request.getParameter("mid").intern();
 		String mpass = request.getParameter("mpass").intern();
-		PrintWriter pw = response.getWriter();
-		HttpSession se = request.getSession();
+		this.pw = response.getWriter();
+		this.se = request.getSession();
 		if(mid == "" || mpass == "") {
 			System.out.println("값 전달 오류");
 		}

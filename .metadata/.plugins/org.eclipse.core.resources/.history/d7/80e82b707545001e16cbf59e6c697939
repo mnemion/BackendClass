@@ -1,9 +1,0 @@
-package web;
-
-import java.sql.*;
-
-public class dbconfig {
-	public static Connection dbinfo() throws Exception {
-		String db_driver = "com.mysql.jdbc.Driver";
-	}
-}
